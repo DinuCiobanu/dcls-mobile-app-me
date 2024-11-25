@@ -1,0 +1,68 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "@react-native",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "standard",
+    "standard-react",
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-native",
+    "react-hooks",
+    "import",
+    "prettier",
+    "sort-destructure-keys"
+  ],
+  "rules": {
+    "camelcase": 0,
+    "no-use-before-define": 0,
+    "@typescript-eslint/ban-types": 0,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 2,
+    "import/order": 2,
+    "react-native/no-unused-styles": 2,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "sort-destructure-keys/sort-destructure-keys": ["error", { "caseSensitive": false }]
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "__DEV__": false,
+    "Request": false,
+    "fetch": false,
+    "FormData": false
+  }
+}
