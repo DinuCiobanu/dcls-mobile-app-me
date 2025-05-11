@@ -29,12 +29,6 @@ const configStore = (): Store<RootState, RootAction> => {
   const sagaMiddleware = createSagaMiddleware()
   const middlewares = [sagaMiddleware]
 
-  if (__DEV__) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const createDebugger = require('redux-flipper').default
-    middlewares.push(createDebugger())
-  }
-
   const initialStore: Store<RootState, RootAction> = createStore(rootReducer, applyMiddleware(...middlewares))
 
   sagaMiddleware.run(rootSaga)

@@ -55,8 +55,6 @@
 	<string>$(PRODUCT_NAME) uses photo library for saving photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses photo library for audit and submit contract</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>$(PRODUCT_NAME) requires your permission to track in order to show you more relevant ads.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>

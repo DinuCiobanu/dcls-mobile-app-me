@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import styled from 'styled-components/native'
@@ -20,7 +20,12 @@ const Login = (): React.ReactElement => {
   const errors = useSelector(storeSelector.auth.selectErrors)
   const isFocused = useIsFocused()
   const { onChange, onSubmit, resetValues, values } = useForm<ILoginParam>({})
-
+  // initialValues: {
+  //   username: 'testuser_sitemanager@gmail.com',
+  //   password: 'TUSiteManagerTest',
+  //   // username: 'alex@dcls.info',
+  //   // password: 'Danube2025!',
+  // },
   const [isPasswordVisible, setPasswordVisible] = useState(true)
 
   useFocusEffect(
@@ -80,8 +85,8 @@ const Login = (): React.ReactElement => {
 
         <FormArea>
           <FormTitle>Login</FormTitle>
-          {LOGIN_FORM.map(renderForms)}
-          <LoginButton disabled={buttonIsDisabled} onPress={handleOnButtonPress}>
+          {/* {LOGIN_FORM.map(renderForms)} */}
+          <LoginButton disabled={false} onPress={handleOnButtonPress}>
             {isLoading ? <ActivityIndicator /> : <LoginButtonHeading>Login</LoginButtonHeading>}
           </LoginButton>
         </FormArea>
