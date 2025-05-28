@@ -15,7 +15,7 @@ export const useBootstrap = (): void => {
       let initialScreen = 'splashScreen'
       const isConnected = await isNetworkAvailable()
 
-      console.log({ isConnected })
+      console.log('11-11', { isConnected })
 
       if (!isConnected) {
         initialScreen = 'noWifi'

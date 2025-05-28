@@ -1,9 +1,15 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+
 import styled from 'styled-components/native'
-import { useFocusEffect, useIsFocused } from '@react-navigation/native'
-import { ActivityIndicator, Keyboard, StatusBar, TouchableOpacity } from 'react-native'
+import { useFocusEffect,
+   useIsFocused
+   } from '@react-navigation/native'
+import {
+  ActivityIndicator,
+  Keyboard,
+   StatusBar, TouchableOpacity, } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { defaultColors } from '../../theme/colors'
 import { icons } from '../../assets/icons'
@@ -82,17 +88,31 @@ const Login = (): React.ReactElement => {
       <Container>
         {isFocused && <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />}
         <HeaderHeading>Welcome Back</HeaderHeading>
-
         <FormArea>
-          <FormTitle>Login</FormTitle>
-          {/* {LOGIN_FORM.map(renderForms)} */}
+          <FormTitle>Login 4</FormTitle>
+          {LOGIN_FORM.map(renderForms)}
           <LoginButton disabled={false} onPress={handleOnButtonPress}>
             {isLoading ? <ActivityIndicator /> : <LoginButtonHeading>Login</LoginButtonHeading>}
-          </LoginButton>
+          </LoginButton> 
         </FormArea>
       </Container>
     </LoginWrap>
   )
+  // return (
+  //   <LoginWrap>
+  //     <Container>
+  //       <HeaderHeading>Welcome Back</HeaderHeading>
+  //       {/* {test.name} */}
+  //       <FormArea>
+  //         <FormTitle>Loginx</FormTitle>
+  //         {LOGIN_FORM.map(renderForms)}
+  //         <LoginButton disabled={false} onPress={handleOnButtonPress}>
+  //           {isLoading ? <ActivityIndicator /> : <LoginButtonHeading>Login</LoginButtonHeading>}
+  //         </LoginButton>
+  //       </FormArea>
+  //     </Container>
+  //   </LoginWrap>
+  // )
 }
 
 export default Login

@@ -24,12 +24,25 @@ const AppNavigation = (): React.ReactElement => {
       if (status === 'active') {
         const requestPermission = async () => {
           const trackingStatus = await getTrackingStatus()
-          console.log({ trackingStatus })
+          console.log('21-45 tracking status', { trackingStatus })
           if (trackingStatus === 'not-determined') {
-            requestTrackingPermission()
+            try {
+              // requestTrackingPermission()
+            } catch (e) {
+              console.log("21-25", e)
+            }
           }
         }
         requestPermission()
+          .then((e) => {
+            console.log('03-51 tracking ok', e)
+          })
+          .catch((e) => {
+            console.log('03-22 tracking bad', e)
+          })
+        // try {
+        //   requestPermission()
+        // } catch (error) {}
       }
     })
 

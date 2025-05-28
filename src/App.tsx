@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/react-native'
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import SplashScreen from 'react-native-splash-screen'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider } from 'react-redux'
@@ -12,7 +12,7 @@ import { ContractProvider } from './providers/ContractProvider'
 import { NotificationsProvider } from './providers/NotificationsProvider'
 import { ModalProvider } from './components/Modal/ModalProvider'
 import { store } from './states/store'
-
+// import ErrorBoundary from 'react-native-error-boundary'
 Sentry.init({
   dsn: 'https://cc91f53e5d0f0f1a21a7ffa80628ad10@o4506031282782208.ingest.sentry.io/4506031285993472',
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
@@ -26,23 +26,27 @@ const App = (): React.ReactElement => {
   }, [])
 
   return (
-    <Sentry.ErrorBoundary>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <Provider store={store}>
-          <ModalProvider>
-            <SafeAreaProvider>
-              <NotificationsProvider>
-                <AuditProvider>
-                  <ContractProvider>
-                    <AppNavigation />
-                  </ContractProvider>
-                </AuditProvider>
-              </NotificationsProvider>
-            </SafeAreaProvider>
-          </ModalProvider>
-        </Provider>
-      </GestureHandlerRootView>
-    </Sentry.ErrorBoundary>
+    <Fragment>
+      {/* <ErrorBoundary> */}
+      <Sentry.ErrorBoundary>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Provider store={store}>
+            <ModalProvider>
+              <SafeAreaProvider>
+                <NotificationsProvider>
+                  <AuditProvider>
+                    <ContractProvider>
+                      <AppNavigation />
+                    </ContractProvider>
+                  </AuditProvider>
+                </NotificationsProvider>
+              </SafeAreaProvider>
+            </ModalProvider>
+          </Provider>
+        </GestureHandlerRootView>
+      </Sentry.ErrorBoundary>
+      {/* </ErrorBoundary> */}
+    </Fragment>
   )
 }
 

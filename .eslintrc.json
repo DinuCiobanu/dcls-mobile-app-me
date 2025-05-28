@@ -49,7 +49,6 @@
     {
       "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
       "rules": {
-        "react/prop-types": "off",
         "sort-destructure-keys/sort-destructure-keys": ["error", { "caseSensitive": false }]
       }
     }
