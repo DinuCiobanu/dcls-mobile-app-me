@@ -27,7 +27,7 @@ const AppNavigation = (): React.ReactElement => {
           console.log('21-45 tracking status', { trackingStatus })
           if (trackingStatus === 'not-determined') {
             try {
-              // requestTrackingPermission()
+              requestTrackingPermission()
             } catch (e) {
               console.log("21-25", e)
             }

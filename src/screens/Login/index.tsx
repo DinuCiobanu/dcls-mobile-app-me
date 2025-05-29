@@ -89,7 +89,7 @@ const Login = (): React.ReactElement => {
         {isFocused && <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />}
         <HeaderHeading>Welcome Back</HeaderHeading>
         <FormArea>
-          <FormTitle>Login 4</FormTitle>
+          <FormTitle>Login</FormTitle>
           {LOGIN_FORM.map(renderForms)}
           <LoginButton disabled={false} onPress={handleOnButtonPress}>
             {isLoading ? <ActivityIndicator /> : <LoginButtonHeading>Login</LoginButtonHeading>}
