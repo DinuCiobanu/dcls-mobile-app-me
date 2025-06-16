@@ -23,15 +23,15 @@ const AppNavigation = (): React.ReactElement => {
     const listener = AppState.addEventListener('change', (status) => {
       if (status === 'active') {
         const requestPermission = async () => {
-          const trackingStatus = await getTrackingStatus()
-          console.log('21-45 tracking status', { trackingStatus })
-          if (trackingStatus === 'not-determined') {
-            try {
-              requestTrackingPermission()
-            } catch (e) {
-              console.log("21-25", e)
-            }
-          }
+          // const trackingStatus = await getTrackingStatus()
+          // console.log('21-45 tracking status', { trackingStatus })
+          // if (trackingStatus === 'not-determined') {
+          //   try {
+          //     requestTrackingPermission()
+          //   } catch (e) {
+          //     console.log("21-25", e)
+          //   }
+          // }
         }
         requestPermission()
           .then((e) => {

@@ -14,12 +14,12 @@ const headings = {
   safety_photo_fields: 'Safety Photos',
 }
 
-const VehicleInfo = ({ contractData, error, hasCameraPermission }) => {
+const VehicleInfo = ({ contractData, error, hasCameraPermission, navigation }) => {
   const { otherInfo, photosArr } = useContext(ContractContext)
   const [choosePhoto, setChoosePhoto] = useState(undefined)
   const [imageTitles, setImageTitles] = useState({})
 
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
   const handleChoosePhoto = (photoTitle) => {
     if (choosePhoto) {

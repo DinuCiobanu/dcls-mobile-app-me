@@ -338,6 +338,7 @@ const SignNewVanContract = ({ navigation }: any) => {
               />
               <View onLayout={(event) => onLayoutChange(event, 'vehicleInfo')} />
               <VehicleInfo
+                navigation={navigation}
                 error={error}
                 contractData={contractData?.fields}
                 hasCameraPermission={permissionList.hasCameraPermission}

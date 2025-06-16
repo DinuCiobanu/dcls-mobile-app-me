@@ -12,6 +12,7 @@ const AddImageContainer = ({ active, auditShow, colIndex, func, img, index, isCo
     if (img) setPhotoUri(img)
   }, [img])
 
+  
   return (
     <View key={item.id}>
       {!auditShow ? (

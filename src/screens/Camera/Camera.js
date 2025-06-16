@@ -13,10 +13,12 @@ import { AuditContext } from '../../providers/AuditProvider'
 import { ContractContext } from '../../providers/ContractProvider'
 import { defaultColors } from '../../theme/colors'
 import CustomButton from './CameraButton'
+import { Text } from 'react-native-gesture-handler'
 
-export default function Camera({ route }) {
+export default function Camera({ route, navigation }) {
+   
   const device = useCameraDevice('back')
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
   const cameraRef = useRef(null)
   const { addFile, idArr, photosArr, setIdList, setPhotoList } = useContext(AuditContext)
 

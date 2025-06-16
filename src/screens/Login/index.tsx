@@ -1,15 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-
 import styled from 'styled-components/native'
-import { useFocusEffect,
-   useIsFocused
-   } from '@react-navigation/native'
-import {
-  ActivityIndicator,
-  Keyboard,
-   StatusBar, TouchableOpacity, } from 'react-native'
+import { useFocusEffect, useIsFocused } from '@react-navigation/native'
+import { ActivityIndicator, Keyboard, StatusBar, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { defaultColors } from '../../theme/colors'
 import { icons } from '../../assets/icons'
@@ -25,13 +19,15 @@ const Login = (): React.ReactElement => {
   const isLoading = useSelector(storeSelector.auth.selectIsLoading)
   const errors = useSelector(storeSelector.auth.selectErrors)
   const isFocused = useIsFocused()
-  const { onChange, onSubmit, resetValues, values } = useForm<ILoginParam>({})
-  // initialValues: {
-  //   username: 'testuser_sitemanager@gmail.com',
-  //   password: 'TUSiteManagerTest',
-  //   // username: 'alex@dcls.info',
-  //   // password: 'Danube2025!',
-  // },
+  const { onChange, onSubmit, resetValues, values } = useForm<ILoginParam>({
+    // initialValues: {
+    //   username: 'testuser_sitemanager@gmail.com',
+    //   password: 'TUSiteManagerTest',
+    //   // username: 'alex@dcls.info',
+    //   // password: 'Danube2025!',
+    // },
+  })
+
   const [isPasswordVisible, setPasswordVisible] = useState(true)
 
   useFocusEffect(
@@ -93,7 +89,7 @@ const Login = (): React.ReactElement => {
           {LOGIN_FORM.map(renderForms)}
           <LoginButton disabled={false} onPress={handleOnButtonPress}>
             {isLoading ? <ActivityIndicator /> : <LoginButtonHeading>Login</LoginButtonHeading>}
-          </LoginButton> 
+          </LoginButton>
         </FormArea>
       </Container>
     </LoginWrap>

@@ -4,6 +4,8 @@ import VanAudit from '../../screens/VanAudit'
 import CreateNewVan from '../../screens/CreateNewVan'
 import SignNewVanContract from '../../screens/SignNewVanContract'
 import AuditById from '../../screens/AuditById'
+import { View } from 'react-native'
+import { Text } from 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator()
 

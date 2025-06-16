@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "build:apk": "cd android && ./gradlew assembleRelease",
     "build:aab": "cd android && ./gradlew bundleRelease",
-    "ios": "NODE_OPTIONS=--openssl-legacy-provider react-native run-ios --simulator='iPhone 14'",
+    "ios": "NODE_OPTIONS=--openssl-legacy-provider react-native run-ios --simulator='iPhone 16 Plus'",
     "start": "react-native start",
     "dev": "react-native start",
     "tsc": "tsc",

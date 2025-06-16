@@ -32,6 +32,7 @@ import Damages from './components/DamageInfo'
 import VehicleInfo from './components/VehicleInfo'
 import UserInfo from './components/UserInfo'
 import SignContract from './components/SignContract'
+import { Text } from 'react-native-gesture-handler'
 
 // TO-DO disable for IOS
 // const {
@@ -126,6 +127,7 @@ const SignNewVanContract = ({ navigation }: any) => {
     signature,
     validationError,
   } = useContext(ContractContext)
+
   // TO-DO disable for IOS
   // const [enabled, requestResolution] = useLocationSettings({
   //   priority: HIGH_ACCURACY,
@@ -302,13 +304,13 @@ const SignNewVanContract = ({ navigation }: any) => {
     <>
       {contractData && (
         <Container>
-          <ModalRoot />
+          {/* <ModalRoot /> */}
 
-          <StatusBar
+          {/* <StatusBar
             barStyle={isFocused ? 'dark-content' : 'light-content'}
             translucent
             backgroundColor="transparent"
-          />
+          /> */}
 
           <ScrollArea
             showsVerticalScrollIndicator={false}
@@ -329,6 +331,7 @@ const SignNewVanContract = ({ navigation }: any) => {
               />
               <View onLayout={(event) => onLayoutChange(event, 'vehicleInfo')} />
               <VehicleInfo
+                navigation={navigation}
                 error={error}
                 contractData={contractData?.fields}
                 hasCameraPermission={permissionList.hasCameraPermission}
@@ -412,7 +415,7 @@ const SignNewVanContract = ({ navigation }: any) => {
         </Container>
       )}
 
-      {!contractData && <Loading />}
+      {/* {!contractData && <Loading />} */}
     </>
   )
 }

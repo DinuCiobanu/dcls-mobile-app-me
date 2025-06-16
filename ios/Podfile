@@ -37,7 +37,7 @@ target 'DCLS' do
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
   pod 'ReactNativeGetLocation', :path => '../node_modules/react-native-get-location'
-
+  pod 'RNSensors', :path => '../node_modules/react-native-sensors'
   # Flags change depending on the env values.
   flags = get_default_flags()
 
