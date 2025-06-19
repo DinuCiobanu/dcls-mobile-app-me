@@ -304,13 +304,13 @@ const SignNewVanContract = ({ navigation }: any) => {
     <>
       {contractData && (
         <Container>
-          {/* <ModalRoot /> */}
+          <ModalRoot />
 
-          {/* <StatusBar
+          <StatusBar
             barStyle={isFocused ? 'dark-content' : 'light-content'}
             translucent
             backgroundColor="transparent"
-          /> */}
+          />
 
           <ScrollArea
             showsVerticalScrollIndicator={false}
@@ -346,7 +346,7 @@ const SignNewVanContract = ({ navigation }: any) => {
                 />
               </InputWrap>
               <Damages
-              navigation={navigation}
+                navigation={navigation}
                 error={error}
                 damages={damages}
                 damageArr={contractData?.fields.other_fields[8]?.repeater_fields[0].options}
