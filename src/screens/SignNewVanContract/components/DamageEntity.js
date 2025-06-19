@@ -8,12 +8,12 @@ import { icons } from '../../../assets/icons'
 import { defaultColors } from '../../../theme/colors'
 import { ContractContext } from '../../../providers/ContractProvider'
 
-const DamageEntity = ({ editTheImage, error, item }) => {
+const DamageEntity = ({ editTheImage, error, item, navigation }) => {
   const [opened, setOpened] = useState(false)
   const { damagePhotoArr } = useContext(ContractContext)
   const [selectedDmgPhoto, setSelectedDmgPhoto] = useState(false)
 
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
   const onWrapPress = useCallback(() => {
     setOpened(!opened)

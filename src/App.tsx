@@ -12,6 +12,8 @@ import { ContractProvider } from './providers/ContractProvider'
 import { NotificationsProvider } from './providers/NotificationsProvider'
 import { ModalProvider } from './components/Modal/ModalProvider'
 import { store } from './states/store'
+import { LogBox } from 'react-native'
+LogBox.ignoreAllLogs()
 Sentry.init({
   dsn: 'https://cc91f53e5d0f0f1a21a7ffa80628ad10@o4506031282782208.ingest.sentry.io/4506031285993472',
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.

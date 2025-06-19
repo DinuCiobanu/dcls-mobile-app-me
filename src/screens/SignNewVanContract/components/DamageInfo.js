@@ -1,12 +1,12 @@
 import React, { useCallback, useContext } from 'react'
 import styled from 'styled-components/native'
 import { defaultColors } from '../../../theme/colors'
-
 import { ContractContext } from '../../../providers/ContractProvider'
 import DamageCheck from './DamageCheck'
 import DamagesImage from './DamagesImage'
+import _ from 'lodash'
 
-const Damages = ({ damageArr, damages, error }) => {
+const Damages = ({ damageArr, damages, error, navigation }) => {
   const { damagePhotoArr, otherInfo, setOtherFields } = useContext(ContractContext)
 
   const addNewDamage = useCallback(
@@ -58,7 +58,9 @@ const Damages = ({ damageArr, damages, error }) => {
     (item) => {
       return (
         <DamageCheck
-          damages={otherInfo && otherInfo?.damages ? otherInfo?.damages : []}
+          navigation={navigation}
+          damages={_.get(otherInfo, 'damages', [])}
+          // damages={otherInfo && otherInfo?.damages ? otherInfo?.damages : []}
           addNewDamage={addNewDamage}
           removeDamage={removeDamage}
           item={item}
@@ -77,6 +79,7 @@ const Damages = ({ damageArr, damages, error }) => {
 
       {Object.keys(damages).length !== 0 && <Label>Add comments to damages: </Label>}
       <DamagesImage
+        navigation={navigation}
         error={error}
         editDamage={editDamage}
         damages={otherInfo && otherInfo?.damages ? otherInfo?.damages : []}

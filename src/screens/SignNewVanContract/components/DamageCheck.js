@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 import CheckBox from '@react-native-community/checkbox'
 import { defaultColors } from '../../../theme/colors'
 
-const DamageCheck = ({ addNewDamage, damages, item, removeDamage }) => {
+const DamageCheck = ({ addNewDamage, damages, item, removeDamage, navigation }) => {
   const [checked, setChecked] = useState(false)
 
   const changeCheckedState = useCallback(() => {
@@ -23,7 +23,7 @@ const DamageCheck = ({ addNewDamage, damages, item, removeDamage }) => {
   }, [item[0]])
 
   return (
-    <DamageEntity key={item[0]}>
+    <DamageEntity key={item[0]} navigation={navigation}>
       <CheckBoxEl
         boxType="square"
         onChange={changeCheckedState}

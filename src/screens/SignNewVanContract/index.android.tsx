@@ -355,6 +355,7 @@ const SignNewVanContract = ({ navigation }: any) => {
               </InputWrap>
 
               <Damages
+              navigation={navigation}
                 error={error}
                 damages={damages}
                 damageArr={contractData?.fields.other_fields[8]?.repeater_fields[0].options}

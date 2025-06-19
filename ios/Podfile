@@ -1,3 +1,6 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+ENV['RCT_NEW_ARCH_ENABLED'] = '0'
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -47,6 +50,7 @@ target 'DCLS' do
     :hermes_enabled => false,
     # :hermes_enabled => flags[:_enabled],
     :fabric_enabled => flags[:fabric_enabled],
+    # :new_architecture_enabled => true,
     # Enables Flipper.
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
@@ -68,7 +72,7 @@ target 'DCLS' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
     sentry_file = 'Pods/Sentry/Sources/SentryCrash/Recording/Monitors/SentryCrashMonitor_CPPException.cpp'
     if File.exist?(sentry_file)
       text = File.read(sentry_file)
